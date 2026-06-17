@@ -6,10 +6,15 @@
     <title>Resultado</title>
   </head>
   <body>
-    <h1>Dados Recebidos</h1>
+    <h1>Dados do produto</h1>
 
     <p>Nome: <span th:text="${nome}"></span></p>
-    <p>Idade: <span th:text="${idade}"></span></p>
+    <p>Preço: <span th:text="${preco}"></span></p>
+    <p>Quantidade: <span th:text="${quantidade}"></span></p>
+    <p>
+      Valor total:
+      <span th:text="${#numbers.formatDecimal(total, 1, 2)}"></span>
+    </p>
 
     <a href="/formulario">Voltar</a>
   </body>

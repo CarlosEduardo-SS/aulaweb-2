@@ -18,10 +18,16 @@ public class Controllers {
 
     @PostMapping("/resultado")
     public String resultado(@RequestParam String nome,
-                            @RequestParam int idade,
+                            @RequestParam double preco,
+                            @RequestParam int quantidade,
                             Model model) {
         model.addAttribute("nome", nome);
-        model.addAttribute("idade", idade);
+        model.addAttribute("preco", preco);
+        model.addAttribute("quantidade", quantidade);
+
+        double total = preco * quantidade;
+        model.addAttribute("total", total);
+
                                 
         return "resultado";
     }

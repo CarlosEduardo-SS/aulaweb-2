@@ -99,7 +99,7 @@ public class Controllers {
         return "calculadora-resultado";
     }
 
-     @GetMapping("/produto")
+    @GetMapping("/produto")
     public String produto() {
 
         return "produto";
@@ -130,4 +130,56 @@ public class Controllers {
                                 
         return "produto-cadastro";
     }
+
+    //A diferença observada foi que, no método GET as informações ficam expostas na URL e aparecem na página, já no método POST as informações aparecem apenas na página de "resultado", ou seja as informações não aparecem na URL como o GET, sendo assim mais seguro.
+    @GetMapping("/get-formulario")
+    public String getFormulario() {
+
+        return "get-formulario";
+    }
+
+    @GetMapping("/get-resultado")
+    public String getResultado(@RequestParam String nome, Model model) {
+        model.addAttribute("nome", nome);
+                                
+        return "get-resultado";
+    }
+
+    @GetMapping("/post-formulario")
+    public String postFormulario() {    
+
+        return "post-formulario";
+    }
+
+    @PostMapping("/post-resultado")
+    public String postResultado(@RequestParam String nome, Model model) {
+        model.addAttribute("nome", nome);
+                   
+        return "post-resultado";
+    }
+
+    @GetMapping("/cadastro10")
+    public String cadastro10() {    
+
+        return "cadastro10";
+    }
+
+    @PostMapping("/resultado10")
+    public String resultado10(@RequestParam String nome,
+                              @RequestParam int idade,
+                              @RequestParam String email,
+                               Model model) {
+        model.addAttribute("nome", nome);
+        model.addAttribute("idade", idade);
+        model.addAttribute("email", email);
+                   
+        return "resultado10";
+    }
+
+    @GetMapping("/")
+    public String index() {    
+
+        return "/index";
+    }
+
 }

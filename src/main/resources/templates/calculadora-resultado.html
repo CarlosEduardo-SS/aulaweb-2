@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resultado</title>
+  </head>
+  <body>
+    <h1>Resultado</h1>
+
+    <p>Soma: <span th:text="${soma}"></span></p>
+    <p>Subtração: <span th:text="${subtração}"></span></p>
+    <p>Multiplicação: <span th:text="${multi}"></span></p>
+    <p>Divisão: <span th:text="${erro != null ? erro : divisao}"></span></p>
+    <a href="/calculadora">Voltar</a>
+  </body>
+</html>

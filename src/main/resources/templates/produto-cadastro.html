@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dados</title>
+  </head>
+  <body>
+    <h1>Dados do produto</h1>
+
+    <p>Nome: <span th:text="${nome}"></span></p>
+    <p>
+      Preço: <span th:text="${erroPreco != null ? erroPreco : preco}"></span>
+    </p>
+    <p>
+      Quantidade:
+      <span
+        th:text="${erroQuantidade != null ? erroQuantidade : quantidade}"
+      ></span>
+    </p>
+    <p>
+      Valor total:
+      <span th:text="${#numbers.formatDecimal(total, 1, 2)}"></span>
+    </p>
+
+    <a href="/produto">Voltar</a>
+  </body>
+</html>

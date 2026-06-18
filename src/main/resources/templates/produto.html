@@ -3,19 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Formulário</title>
+    <title>Produto</title>
   </head>
   <body>
-    <h1>Cadastro</h1>
+    <h1>Cadastro de produto</h1>
 
-    <form action="/resultado" method="post">
+    <form action="/produto-cadastro" method="post">
       <label>Nome: </label>
       <input type="text" name="nome" />
 
       <br /><br />
 
-      <label>Email: </label>
-      <input type="email" name="email" />
+      <label>Preço: </label>
+      <input type="float" name="preco" />
+
+      <br /><br />
+
+      <label>Quantidade: </label>
+      <input type="number" name="quantidade" />
 
       <br /><br />
 
